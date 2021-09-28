@@ -1,11 +1,18 @@
 clc;
 clear all;
-arm.d1 = 0.426; arm.a3 = 0.425; arm.d4 = 0.425; arm.d6 = 0.0755;
-current_position = [0,90,0,0,90,0];
-position1 = [-20,35,40,55,70,120];
-%pose1 = IK(arm, position1, current_position);
-p2 = FK(arm, position1);
+arm.l1=0.425;
+arm.l2=0.425;
+arm.l3=0.0775;
+%pp1 = [45,45,90];
+%pp2 = [25,75,78];
+%p1 = FK(arm, pp1);
+%p2 = FK(arm, pp2);
+p1 = [0.225, 0.7255, 180];
+p2 = [0.225, 0.6, 180];
 
-%p1 = FK(arm, current_position);
-%p3 =[p2(1), p2(2), p2(3), 180, 0, 0];
-%moveline(p1,p3);
+r0 = 0.5*(p1+p2);
+%position = IK(arm, p2);
+%pose = FK(arm, pp1);
+%moveP2P(p1, p2);
+%moveline(p1,p2);
+movecircular(p1,p2,r0);
