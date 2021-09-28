@@ -1,9 +1,0 @@
-clc;
-clear all;
-arm.d1 = 0.426; arm.a3 = 0.425; arm.d4 = 0.425; arm.d6 = 0.0755;
-position1 = [0,90,0,0,90];
-pose1 = FK(arm, position1);
-
-%moveP2P(p1, p2);
-%moveline(p1,p2);
-%movecircular(p1,p2,r0);
